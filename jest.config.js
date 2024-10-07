@@ -4,5 +4,6 @@ module.exports = {
   coverageReporters: ["json", "html", "text"],
   coveragePathIgnorePatterns: ["node_modules/"],
   testEnvironment: "jsdom",
-  testMatch: ["**/*.test.ts", "**/*.test.tsx"]
+  testMatch: ["**/*.test.ts", "**/*.test.tsx"],
+  modulePathIgnorePatterns: ["<rootDir>/teams/"]
 };

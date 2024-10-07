@@ -4,13 +4,13 @@ This app is built as a micro-frontend using [webpack ModuleFederation Plugin](ht
 
 It has a container app and (currently) 2 teams working within it.
 
-+ Onboarding team
-	+ Login
-	+ Navigation
-	+ Translation
-+ Dashboard team
-	+ Chart pages
-		+ grabs data from the carbon intensity data api
+- Onboarding team
+  - Login
+  - Navigation
+  - Translation
+- Dashboard team
+  - Chart pages
+    - grabs data from the carbon intensity data api
 
 ![Arcitechture Overview](./arcitechture.png)
 

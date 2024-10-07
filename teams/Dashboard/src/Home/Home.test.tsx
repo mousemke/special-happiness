@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { render } from "@testing-library/react";
-import Home, { parseMonthAndDay, parseData } from "./Home";
-
 import Translationary from "translationary";
+
+import Home, { parseMonthAndDay } from "./Home";
 
 jest.mock("react", () => ({
   ...jest.requireActual("react"),
@@ -12,7 +12,6 @@ jest.mock("react", () => ({
 
 const mockedUseState = jest.mocked(useState);
 const mockedUseEffect = jest.mocked(useEffect);
-
 
 // this can be unified into a distributable testing util for all shards
 const mockSDK = {
@@ -26,7 +25,7 @@ const mockSDK = {
   components: {
     ErrorBoundary: () => <div>ErrorBoundry</div>,
     Loader: () => <div>Loader</div>,
-    RemoteWrapper: () => <div>RemoteWrapper</div>,
+    RemoteWrapper: () => <div>RemoteWrapper</div>
   }
 };
 
@@ -50,8 +49,8 @@ describe("Home", () => {
 
 describe("parseMonthAndDay", () => {
   it("should parse a date in the right format", () => {
-    const date = parseMonthAndDay("2024-09-01T01:00Z")
+    const date = parseMonthAndDay("2024-09-01T01:00Z");
 
-    expect(date).toBe("01.09., 3:00")
+    expect(date).toBe("01.09., 3:00");
   });
 });

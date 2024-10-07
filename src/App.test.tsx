@@ -1,20 +1,23 @@
-import React from "react";
+import React, { act } from "react";
 import { render } from "@testing-library/react";
 import App from "./App";
-
-const MockTranslationToggle = () => <div>translation</div>;
-const MockDashboard = () => <div>dashboard</div>;
+import mockSDK from "./useSDK/useSDK.mocks";
 
 jest.mock("./externalComponents", () => ({
-  DASHBOARD: MockDashboard,
-  TRANSLATION_TOGGLE: MockTranslationToggle,
+  Dashboard: () => <div>dashboard</div>,
+  TranslationToggle: () => <div>translation</div>
+}));
+
+jest.mock("./useSDK", () => ({
+  __esModule: true,
+  default: jest.fn(() => mockSDK),
 }));
 
 describe("App", () => {
   it("should load the translation toggle and dashboard", () => {
-    const { getByText } = render(<App />);
+    const { queryByText } = render(<App />);
 
-    expect(getByText("translation")).toBeInTheDocument();
-    expect(getByText("dashboard")).toBeInTheDocument();
+    expect(queryByText("translation")).not.toBe(null);
+    expect(queryByText("dashboard")).not.toBe(null);
   });
 });

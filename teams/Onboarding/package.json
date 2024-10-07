@@ -7,6 +7,8 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^18.3.11",
     "babel-loader": "^9.1.3",
     "html-webpack-plugin": "^5.5.3",
     "react": "^18.2.0",
@@ -16,7 +18,7 @@
   },
   "scripts": {
     "start": "webpack serve",
-    "prettier": "prettier \"./**/*.js\" \"./**/*.ts\" \"./**/*.tsx\" \"./**/*.md\" \"./**/*.html\" --write",
+    "prettier": "prettier \"./**/*.js\" \"./**/*.ts\" \"./**/*.tsx\" \"./**/*.md\" --write",
     "test": "yarn prettier && yarn test:lint && yarn test:types && yarn test:unit",
     "test:unit": "jest && yarn test:unit:printCoverageLink",
     "test:unit:printCoverageLink": "node ./printCoverageReportLink.js",
