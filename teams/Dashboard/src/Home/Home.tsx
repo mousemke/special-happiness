@@ -17,7 +17,7 @@ const API_URL = "https://api.carbonintensity.org.uk/intensity";
 const FROM = "2024-09-01T01:00Z";
 const TO = "2024-10-01T01:00Z";
 
-const parseMonthAndDay = (isoString: string) => {
+export const parseMonthAndDay = (isoString: string) => {
   const date = new Date(isoString);
 
   return date.toLocaleString("default", {
@@ -28,7 +28,7 @@ const parseMonthAndDay = (isoString: string) => {
   });
 };
 
-const parseData = (t: Translator, data: Array<DataItem>) =>
+export const parseData = (t: Translator, data: Array<DataItem>) =>
   data.map((d, i) => {
     const { intensity } = d;
     const { forecast, actual } = intensity;

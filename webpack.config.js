@@ -28,7 +28,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "Host",
       remotes: {
+        // http://localhost:4000/moduleEntry.js should likely be an ENV variable to help move between dev, stage, & prod
         Onboarding: `Onboarding@http://localhost:4000/moduleEntry.js`,
+        // http://localhost:4001/moduleEntry.js should likely be an ENV variable to help move between dev, stage, & prod
         Dashboard: `Dashboard@http://localhost:4001/moduleEntry.js`
       },
       shared: {
